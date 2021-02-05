@@ -1,0 +1,22 @@
+[
+    {
+        "id_": 6,
+        "nom": "pomme",
+        "quantite": "4"
+    },
+    {
+        "id_": 9,
+        "nom": "rainsin",
+        "quantite": "6"
+    },
+    {
+        "id_": 11,
+        "nom": "poires",
+        "quantite": "12"
+    },
+    {
+        "id_": 12,
+        "nom": "Abricot",
+        "quantite": "9"
+    }
+]
