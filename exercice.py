@@ -2,6 +2,8 @@
 # Ajouter Une option importer la liste
 # Ajouter une option exporter la liste
 ###########################################################################################################
+import json 
+import os
 
 print('Voici le menu:')
 print('\t1- Afficher la liste de courses.')
@@ -48,5 +50,34 @@ while continuer:
         courses.clear()
         print("La liste a bien été vidée.")
     elif choix == '5':
+        nom_fichier = input('Quel est le nom du fichier: ')
+        chemin_fichier = os.path.join(
+            os.path.dirname(__file__),
+            nom_fichier
+        )
+        if os.path.exists(chemin_fichier):
+            try:
+                with open(chemin_fichier, 'r', encoding='utf-8') as fichier:
+                    courses = json.load(fichier)
+                    print("La liste a bien été importée")
+            except Exception as erreur:
+                print(erreur)
+        else:
+            print('Aucun fichier ne correpsond au chemin: ' + chemin_fichier)
+    elif choix == '6':
+        nom_fichier = input('Sous quel nom voulez-vous sauvegarder le fichier: ')
+        chemin_fichier = os.path.join(
+            os.path.dirname(__file__),
+            nom_fichier
+        )
+        try:
+            with open(chemin_fichier, 'w', encoding='utf-8') as fichier:
+                json.dump(courses, fichier, indent=4)
+                print("La liste à ete sauvegardée vers " + chemin_fichier)
+        except json.decoder.JSONDecodeError as jerreur:
+            print(jerreur)
+        except Exception as erreur:
+            print(erreur)
+    elif choix == '7':
         continuer = False
         print("Au revoir")

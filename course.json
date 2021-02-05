@@ -1,0 +1,14 @@
+[
+    {
+        "nom": "pomme",
+        "quantite": 5
+    },
+    {
+        "nom": "poires",
+        "quantite": 7
+    },
+    {
+        "nom": "abricot",
+        "quantite": 2
+    }
+]
