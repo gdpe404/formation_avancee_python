@@ -1,0 +1,12 @@
+[
+    {
+        "nom": "John",
+        "arme": "Epée",
+        "pdv": 100
+    },
+    {
+        "nom": "Maude",
+        "arme": "Epée Lourde",
+        "pdv": 150
+    }
+]
